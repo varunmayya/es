@@ -1,0 +1,29 @@
+<%= notice %>
+<%= alert%>
+<%= simple_form_for @event do |f| %>
+
+    <%= f.input :title %>
+    <%= f.input :details , :as => :text %>
+    <%= f.input :logo_url %>
+    <%= f.input :start_date %>
+    <%= f.input :start_time %>
+    <%= f.input :end_date %>
+    <%= f.input :end_time %>
+<br/>
+
+<div class="hero-unit">	
+	<h2>Tickets for this event</h2>
+	<%= link_to 'Click here to add tickets for this event', new_ticket_path(@event.id) %>
+</div>
+
+    <%= f.input :address,  :as => :text %>
+    <%= f.input :city %>
+    <%= f.input :zipcode %>
+    <%= f.input :category %>
+    <%= f.input :is_private %>
+
+    <%= f.button :submit , :class => "btn btn-large btn-success" %>
+
+<% end %>
+
+

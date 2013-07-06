@@ -1,0 +1,17 @@
+<%= simple_form_for([@ticket.event, @ticket]) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="inputs">
+
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.input :price %>
+    <%= f.input :quantity %>
+    <%= f.input :sales_start_datetime %>
+    <%= f.input :sales_end_datetime %>
+  </div>
+
+  <div class="actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
