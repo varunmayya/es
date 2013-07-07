@@ -11,10 +11,6 @@
     <%= f.input :end_time %>
 <br/>
 
-<div class="hero-unit">	
-	<h2>Tickets for this event</h2>
-	<%= link_to 'Click here to add tickets for this event', new_ticket_path(@event.id) %>
-</div>
 
     <%= f.input :address,  :as => :text %>
     <%= f.input :city %>

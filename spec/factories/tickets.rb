@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :ticket do
-    name "MyString"
-    description "MyString"
-    price 1
-    quantity 1
+    name "Front Row Seats"
+    description "Front row seats including complementary meal."
+    price 250
+    quantity 100
     sales_start_datetime "2013-07-05 05:13:00"
     sales_end_datetime "2013-07-05 05:13:00"
     event_id 1

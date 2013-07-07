@@ -1,6 +1,7 @@
 class TicketsController < ApplicationController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
-  before_filter :get_event
+  before_action :get_event
+  before_action :authenticate_user!, :except => [:show, :index]
   # GET /tickets
   # GET /tickets.json
 
@@ -17,8 +18,7 @@ class TicketsController < ApplicationController
 
   # GET /tickets/new
   def new
-    event = Event.find(params[:event_id])
-      @ticket = @event.tickets.build
+    @ticket = @event.tickets.build
   end
 
   # GET /tickets/1/edit
