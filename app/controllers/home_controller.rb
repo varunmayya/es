@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
+
   def index
+     session[:registered_from] = home_index_path
   end
 
   def howitworks
@@ -7,4 +9,7 @@ class HomeController < ApplicationController
 
   def pricing
   end
+
+
+
 end
