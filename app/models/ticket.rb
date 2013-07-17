@@ -1,4 +1,5 @@
 class Ticket < ActiveRecord::Base
+  resourcify
   belongs_to :event
   validates_presence_of :name
   validates_presence_of :price

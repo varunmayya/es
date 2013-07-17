@@ -15,18 +15,19 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+    
   end
 
   # GET /events/1/edit
   def edit
-  
+  check_event_authorization_or_deny(params[:id])
   end
 
   # POST /events
   # POST /events.json
   def create
     @event = Event.new(event_params)
-
+   @event.user_id = current_user.id
     respond_to do |format|
       if @event.save
         format.html { redirect_to @event, notice: 'Event was successfully created.' }
@@ -70,6 +71,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :details, :logo_url, :start_date, :start_time, :end_date, :end_time, :address, :city, :zipcode, :category, :is_private, tickets_attributes: [:id, :name, :price, :quantity, :description, :sales_start_datetime, :sales_end_datetime])
+      params.require(:event).permit(:title, :details, :logo_url, :start_date, :start_time, :end_date, :end_time, :address, :city, :zipcode, :category, :is_private)
     end
 end

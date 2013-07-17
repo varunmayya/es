@@ -1,4 +1,9 @@
 <% content_for(:title, 'Home' ) %>
+<%if notice%>
+<div class="alert">
+<%=notice%>
+</div>
+<%end%>
 
 <h1>This is Home!</h1>
 EventScene is yada yada <br/>

@@ -50,7 +50,7 @@ gem 'newrelic_rpm'
 gem 'validates_timeliness', '~> 3.0'
 gem 'simple_form'
 gem "nested_form"
-
+gem "rolify"
 
 group :development, :test do
   gem 'rspec-rails', '~> 2.13.1'

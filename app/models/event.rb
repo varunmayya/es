@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+ resourcify
  validates :title, :city, :address, :zipcode, :logo_url, :category, :start_time, :start_date, :end_date, :end_time, :presence => true
  validates :zipcode,  :length => {:is => 6}
  validates_format_of :logo_url,
@@ -10,4 +11,5 @@ class Event < ActiveRecord::Base
  validates_date :end_date, :on_or_after => :start_date, :message => "Must be on or after start date."
  
  has_many :tickets
+ belongs_to :user
 end

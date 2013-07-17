@@ -6,8 +6,8 @@ FactoryGirl.define do
     description "Front row seats including complementary meal."
     price 250
     quantity 100
-    sales_start_datetime "2013-07-05 05:13:00"
-    sales_end_datetime "2013-07-05 05:13:00"
+    sales_start_datetime "2014-07-05 05:13:00"
+    sales_end_datetime "2014-08-05 05:13:00"
     event_id 1
   end
 end

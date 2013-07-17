@@ -15,6 +15,7 @@
       <th>Zipcode</th>
       <th>Category</th>
       <th>Is private</th>
+<th>user id</th>
       <th></th>
       <th></th>
       <th></th>
@@ -36,6 +37,7 @@
         <td><%= event.zipcode %></td>
         <td><%= event.category %></td>
         <td><%= event.is_private %></td>
+<td><%= event.user_id %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
         <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>

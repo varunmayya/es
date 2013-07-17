@@ -6,9 +6,11 @@ class RegistrationsController < Devise::RegistrationsController
  
   def after_sign_up_path_for(resource)
     if session[:registered_from] == home_index_path
+      flash[:notice] = 'Welcome to EventScene, you can create an event now!'
         new_event_path
       else
-        home_index_path
+        flash[:notice] = 'Welcome to EventScene!'
+        root_url
       end
   end
   

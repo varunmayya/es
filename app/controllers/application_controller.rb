@@ -15,5 +15,24 @@ class ApplicationController < ActionController::Base
     @devise_mapping ||= Devise.mappings[:user]
   end
   
-    helper_method :resource, :resource_name, :devise_mapping
+  def check_event_authorization?(event_id)
+    if Event.find(event_id).user_id == current_user.id
+      return true
+    elsif current_user.has_role? :admin
+      return true
+    else
+      return false
+  end
+end
+
+
+  def check_event_authorization_or_deny(event_id)
+    unless (Event.find(event_id).user_id == current_user.id) || (current_user.has_role? :admin)
+   flash[:notice] = "Sorry, this is not your event!"
+   redirect_to root_url
+  end
+end
+
+  
+    helper_method :resource, :resource_name, :devise_mapping, :check_event_authorization
 end
